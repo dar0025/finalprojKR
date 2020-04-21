@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/loginscreen">
+
+    <fragment
+        android:id="@+id/loginscreen"
+        android:name="com.example.finalproj.loginscreen"
+        android:label="fragment_loginscreen"
+        tools:layout="@layout/fragment_loginscreen" >
+        <action
+            android:id="@+id/action_loginscreen_to_firstquestion"
+            app:destination="@id/firstquestion" />
+    </fragment>
+    <activity
+        android:id="@+id/signup"
+        android:name="com.example.finalproj.signup"
+        android:label="signup_page"
+        tools:layout="@layout/signup_page" />
+    <fragment
+        android:id="@+id/firstquestion"
+        android:name="com.example.finalproj.firstquestion"
+        android:label="fragment_firstquestion"
+        tools:layout="@layout/fragment_firstquestion" />
+    <fragment
+        android:id="@+id/secondquestion"
+        android:name="com.example.finalproj.secondquestion"
+        android:label="fragment_secondquestion"
+        tools:layout="@layout/fragment_secondquestion" />
+    <fragment
+        android:id="@+id/thirdquestion"
+        android:name="com.example.finalproj.thirdquestion"
+        android:label="fragment_thirdquestion"
+        tools:layout="@layout/fragment_thirdquestion" />
+    <fragment
+        android:id="@+id/fourthquestion"
+        android:name="com.example.finalproj.fourthquestion"
+        android:label="fragment_fourthquestion"
+        tools:layout="@layout/fragment_fourthquestion" />
+    <fragment
+        android:id="@+id/fifthquestion"
+        android:name="com.example.finalproj.fifthquestion"
+        android:label="fragment_fifthquestion"
+        tools:layout="@layout/fragment_fifthquestion" />
+    <fragment
+        android:id="@+id/sixthquestion"
+        android:name="com.example.finalproj.sixthquestion"
+        android:label="fragment_sixthquestion"
+        tools:layout="@layout/fragment_sixthquestion" />
+    <fragment
+        android:id="@+id/seventhquestion"
+        android:name="com.example.finalproj.seventhquestion"
+        android:label="fragment_seventhquestion"
+        tools:layout="@layout/fragment_seventhquestion" />
+    <fragment
+        android:id="@+id/eighthquestion"
+        android:name="com.example.finalproj.eighthquestion"
+        android:label="fragment_eighthquestion"
+        tools:layout="@layout/fragment_eighthquestion" />
+    <fragment
+        android:id="@+id/ninthquestion"
+        android:name="com.example.finalproj.ninthquestion"
+        android:label="fragment_ninthquestion"
+        tools:layout="@layout/fragment_ninthquestion" />
+    <fragment
+        android:id="@+id/tenthquestion"
+        android:name="com.example.finalproj.tenthquestion"
+        android:label="fragment_tenthquestion"
+        tools:layout="@layout/fragment_tenthquestion" />
+</navigation>
