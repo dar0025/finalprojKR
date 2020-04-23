@@ -36,13 +36,13 @@ class seventhquestion : AppCompatActivity() {
         number_picker7?.wrapSelectorWheel = false
 
         //default 1
-        var picked = -1
+        var picked = 1
 
         // Set number picker value changed listener
         number_picker7?.setOnValueChangedListener { picker, oldVal, newVal ->
 
             //Display the newly selected number to text view
-            text_view7.text = "Selected Value : $newVal"
+            text_view7.text = "Selected Level of Agreement: $newVal"
             picked = newVal
 
         }

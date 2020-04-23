@@ -54,13 +54,13 @@ class tenthquestion : AppCompatActivity() {
         number_picker10?.wrapSelectorWheel = false
 
         //default 1
-        var picked = -1
+        var picked = 1
 
         // Set number picker value changed listener
         number_picker10?.setOnValueChangedListener { picker, oldVal, newVal ->
 
             //Display the newly selected number to text view
-            text_view10.text = "Selected Value : $newVal"
+            text_view10.text = "Selected Level of Agreement: $newVal"
             picked = newVal
 
         }
@@ -151,6 +151,10 @@ class tenthquestion : AppCompatActivity() {
                                 println("done with this")
                                 smallestUser = compareQuestion.user
                                 smallest =sum
+
+                                val NewIntent =  Intent(this,result::class.java )
+                                NewIntent.putExtra("user", smallestUser)
+                                startActivity(NewIntent)
                             }
 
                         }

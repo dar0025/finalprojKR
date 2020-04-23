@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_loginscreen.*
 //import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
@@ -34,7 +34,9 @@ import androidx.fragment.app.FragmentActivity
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var mAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             var email = Email.text.toString()
             var password = Password.text.toString()
             if (email != null && password != null) {
-                mAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(this){ task ->
+                mAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this){ task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
 
@@ -82,36 +84,49 @@ class MainActivity : AppCompatActivity() {
         Create.setOnClickListener {
             var email = Email.text.toString()
             var password = Password.text.toString()
-            mAuth?.createUserWithEmailAndPassword(email, password)
-                ?.addOnCompleteListener(
-                    this
-                ) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Toast.makeText(
-                            this, "created succesful.",
-                            Toast.LENGTH_SHORT
-                        ).show()
 
-                        val user = mAuth.getCurrentUser()
-                        val NewIntent = Intent(this, firstquestion::class.java)
-                        NewIntent.putExtra("user", email)
-                        startActivity(NewIntent)
+            if (password.length < 6) {
+                Toast.makeText(
+                    this, "Password must be at least 6 characters long.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
 
-                    } else {
-                        // If sign in fails, display a message to the user.
+                mAuth?.createUserWithEmailAndPassword(email, password)
+                    ?.addOnCompleteListener(this) { task ->
 
-                        Toast.makeText(
-                            this, "Authentication failed.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        //updateUI(null)
+                        println(task.result)
+
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Toast.makeText(
+                                this, "created succesful.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            println("made it 1")
+
+                            val user = mAuth.getCurrentUser()
+                            val NewIntent = Intent(this, firstquestion::class.java)
+                            NewIntent.putExtra("user", email)
+                            startActivity(NewIntent)
+                            println("made it 2")
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            println("made it 3")
+                            Toast.makeText(
+                                this, "Authentication failed.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            //updateUI(null)
+                            println("made it 4")
+                        }
+
+                        // ...
                     }
+            }
 
-                    // ...
-                }
         }
-
     }
 }
 

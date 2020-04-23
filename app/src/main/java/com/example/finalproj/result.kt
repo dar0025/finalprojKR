@@ -17,24 +17,26 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.Toast
+import kotlinx.android.synthetic.main.results.*
 
 //import sun.jvm.hotspot.utilities.IntArray
 
 
 
 
-class secondquestion : AppCompatActivity() {
+class result : AppCompatActivity() {
+
     var user = ""
-    var array = IntArray(10)
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.fragment_secondquestion)
+        setContentView(R.layout.results)
         var intent: Intent = getIntent()
+
         user = (intent.getStringExtra("user"))
-            array = (intent.getIntArrayExtra("list"))
+
 
 
 
@@ -42,29 +44,8 @@ class secondquestion : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        number_picker2?.minValue = 1
-        number_picker2?.maxValue = 5
-        number_picker2?.wrapSelectorWheel = false
 
-        //default 1
-        var picked = 1
-
-        // Set number picker value changed listener
-        number_picker2?.setOnValueChangedListener { picker, oldVal, newVal ->
-
-            //Display the newly selected number to text view
-            text_view2.text = "Selected Level of Agreement: $newVal"
-            picked = newVal
-
-        }
-        nextquestion2?.setOnClickListener {
-
-            array.set(1,picked)
-            val NewIntent =  Intent(this,thirdquestion::class.java )
-            NewIntent.putExtra("list",array )
-            NewIntent.putExtra("user", user)
-            startActivity(NewIntent)
-        }
+        user_text.text = user
 
 
     }

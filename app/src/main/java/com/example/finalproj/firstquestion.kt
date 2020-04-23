@@ -34,13 +34,13 @@ class firstquestion : AppCompatActivity() {
         number_picker1?.wrapSelectorWheel = false
 
         //default 1
-        var picked = -1
+        var picked = 1
 
         // Set number picker value changed listener
         number_picker1?.setOnValueChangedListener { picker, oldVal, newVal ->
 
             //Display the newly selected number to text view
-            text_view1.text = "Selected Value : $newVal"
+            text_view1.text = "Selected Level of Agreement: $newVal"
             picked = newVal
 
         }

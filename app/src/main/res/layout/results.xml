@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textAlignment="center"
+        android:text="Congratulations!" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textAlignment="center"
+        android:text="Your best roommate match has been calculated, and can be contacted at:" />
+
+    <TextView
+        android:id="@+id/user_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textAlignment="center"
+        android:text="Is Empty" />
+
+
+</LinearLayout>
