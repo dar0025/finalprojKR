@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/colorAccent"
         android:textAlignment="center"
-        android:text="please provide your level of agreement with the following statement on a scale from 1 to 5." />
+        android:text="Please provide your level of agreement with the following statement on a scale from 1 to 5." />
 
     <TextView
         android:id="@+id/question_text"
