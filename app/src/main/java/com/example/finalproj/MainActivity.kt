@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
 
                         Toast.makeText(
-                            this, "Authentication success.",
+                            this, "Login success.",
                             Toast.LENGTH_SHORT
                         ).show()
                         val user = mAuth?.getCurrentUser()
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(
-                                this, "created succesful.",
+                                this, "Account creation successful.",
                                 Toast.LENGTH_SHORT
                             ).show()
                             println("made it 1")
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                             // If sign in fails, display a message to the user.
                             println("made it 3")
                             Toast.makeText(
-                                this, "Authentication failed.",
+                                this, "Creation failed.",
                                 Toast.LENGTH_SHORT
                             ).show()
                             //updateUI(null)

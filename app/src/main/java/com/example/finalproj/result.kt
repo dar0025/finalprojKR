@@ -37,8 +37,8 @@ class result : AppCompatActivity() {
 
         threeUsers = intent.getStringArrayListExtra("users")
         difference = intent.getIntegerArrayListExtra("values")
-        println(threeUsers[0]+ threeUsers[1]+threeUsers[2])
-        println(difference[0] + difference[1]+ difference[2])
+        //println(threeUsers[0]+ threeUsers[1]+threeUsers[2])
+        //println(difference[0] + difference[1]+ difference[2])
 
 
     }
@@ -46,7 +46,18 @@ class result : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        user_text.text = threeUsers[0] + "(" +difference[0]+")"+" "+ threeUsers[1] + "(" +difference[1]+")"+" "+threeUsers[2]+ "(" +difference[2]+")"
+        user1_text.text = threeUsers[0]
+        user1_score.text = "(" + difference[0]+")" + " Points"
+        user2_text.text = threeUsers[1]
+        user2_score.text = "(" + difference[1]+")" + " Points"
+        user3_text.text = threeUsers[2]
+        user3_score.text = "(" + difference[2]+")" + " Points"
+
+       exit_button.setOnClickListener{
+
+           val NewIntent =  Intent(this, MainActivity::class.java )
+           startActivity(NewIntent)
+       }
 
 
     }

@@ -6,11 +6,11 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="35dp"
         android:textSize="25dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorAccent"
         android:textAlignment="center"
         android:text="Congratulations!" />
     <TextView
@@ -19,21 +19,120 @@
         android:layout_height="100dp"
         android:textSize="25dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/design_default_color_primary_dark"
         android:textAlignment="center"
-        android:text="Your best roommate match has been calculated, and can be contacted at:" />
+        android:text="Your best roommate matches have been calculated, and can be contacted at:" />
 
     <TextView
-        android:id="@+id/user_text"
+        android:id="@+id/user1_text"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textSize="25dp"
+        android:layout_height="35dp"
+        android:textSize="23dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/design_default_color_primary_dark"
         android:textAlignment="center"
-        android:text="Is Empty" />
+        android:text="User1" />
+
+    <TextView
+
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:textSize="23dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:text="Personality Score Differential: " />
+
+    <TextView
+        android:id="@+id/user1_score"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:text="-1 Points "
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="23dp"
+        />
+
+    <TextView
+        android:id="@+id/user2_text"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="23dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textAlignment="center"
+        android:text="User2" />
+
+    <TextView
+
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:textSize="23dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:text="Personality Score Differential: " />
+
+    <TextView
+        android:id="@+id/user2_score"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:text="-1 Points "
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="23dp"
+        />
+    <TextView
+        android:id="@+id/user3_text"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="23dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textAlignment="center"
+        android:text="User3" />
+
+    <TextView
+
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:textSize="23dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:text="Personality Score Differential: " />
+
+    <TextView
+        android:id="@+id/user3_score"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:text="-1 Points "
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="23dp"
+        />
+
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="10dp"
+        android:text="Exit"
+        />
 
 
 </LinearLayout>

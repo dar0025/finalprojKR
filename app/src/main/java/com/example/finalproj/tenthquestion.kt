@@ -137,16 +137,16 @@ class tenthquestion : AppCompatActivity() {
                             //one of the question lists from the retreived data
                             if (x!=y){
 
-                                var difference1 = compareQuestion.question1 - Questions.question1
-                                var difference2 = compareQuestion.question2 - Questions.question2
-                                var difference3 = compareQuestion.question3 - Questions.question3
-                                var difference4 = compareQuestion.question4 - Questions.question4
-                                var difference5 = compareQuestion.question5 - Questions.question5
-                                var difference6 = compareQuestion.question6 - Questions.question6
-                                var difference7 = compareQuestion.question7 - Questions.question7
-                                var difference8 = compareQuestion.question8 - Questions.question8
-                                var difference9 = compareQuestion.question9 - Questions.question9
-                                var difference10 = compareQuestion.question10 - Questions.question10
+                                var difference1 = Math.abs(compareQuestion.question1 - Questions.question1)
+                                var difference2 = Math.abs(compareQuestion.question2 - Questions.question2)
+                                var difference3 = Math.abs(compareQuestion.question3 - Questions.question3)
+                                var difference4 = Math.abs(compareQuestion.question4 - Questions.question4)
+                                var difference5 = Math.abs(compareQuestion.question5 - Questions.question5)
+                                var difference6 = Math.abs(compareQuestion.question6 - Questions.question6)
+                                var difference7 = Math.abs(compareQuestion.question7 - Questions.question7)
+                                var difference8 = Math.abs(compareQuestion.question8 - Questions.question8)
+                                var difference9 = Math.abs(compareQuestion.question9 - Questions.question9)
+                                var difference10 = Math.abs(compareQuestion.question10 - Questions.question10)
                                 sum = difference10+difference9+difference8+difference7+difference6+difference5+difference4+difference3+difference2+difference1
                                 ClosestUsers.add(compareQuestion.user)
                                 ClosestValues.add(sum)
@@ -166,7 +166,7 @@ class tenthquestion : AppCompatActivity() {
                                 }
                                 for (j in 0..ClosestValues.size-1){
 
-                                    if (i == ClosestValues[j] && ClosestUsers[j]!=user  && !threeUsers.contains(ClosestUsers[j])){
+                                    if (i == ClosestValues[j] && ClosestUsers[j]!=user && !threeUsers.contains(ClosestUsers[j])){ //
                                         //making sure that the currrent user isnt being sent
                                         threeUsers.add(ClosestUsers[j])
                                         threeValues.add(ClosestValues[j])
