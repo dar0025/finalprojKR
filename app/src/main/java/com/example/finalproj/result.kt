@@ -26,8 +26,8 @@ import kotlinx.android.synthetic.main.results.*
 
 class result : AppCompatActivity() {
 
-    var user = ""
-
+    var threeUsers : ArrayList<String> = ArrayList()
+   var difference : ArrayList<Int> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -35,9 +35,10 @@ class result : AppCompatActivity() {
         setContentView(R.layout.results)
         var intent: Intent = getIntent()
 
-        user = (intent.getStringExtra("user"))
-
-
+        threeUsers = intent.getStringArrayListExtra("users")
+        difference = intent.getIntegerArrayListExtra("values")
+        println(threeUsers[0]+ threeUsers[1]+threeUsers[2])
+        println(difference[0] + difference[1]+ difference[2])
 
 
     }
@@ -45,7 +46,7 @@ class result : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        user_text.text = user
+        user_text.text = threeUsers[0] + "(" +difference[0]+")"+" "+ threeUsers[1] + "(" +difference[1]+")"+" "+threeUsers[2]+ "(" +difference[2]+")"
 
 
     }

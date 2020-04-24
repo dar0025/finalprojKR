@@ -122,7 +122,9 @@ class tenthquestion : AppCompatActivity() {
                                 )
                             )
                         }
-                        var smallestUser = "hello there"
+                        var ClosestUsers : ArrayList<String> = ArrayList()
+                        var ClosestValues : ArrayList<Int> = ArrayList()
+                        //these two lists are used to order the users by their difference with respect to their questions
                         var y = questionsList.indexOf(Questions)
                         var total = 0
                         var sum = 0
@@ -132,6 +134,7 @@ class tenthquestion : AppCompatActivity() {
 
 
                             var compareQuestion = questionsList.get(x)
+                            //one of the question lists from the retreived data
                             if (x!=y){
 
                                 var difference1 = compareQuestion.question1 - Questions.question1
@@ -145,25 +148,53 @@ class tenthquestion : AppCompatActivity() {
                                 var difference9 = compareQuestion.question9 - Questions.question9
                                 var difference10 = compareQuestion.question10 - Questions.question10
                                 sum = difference10+difference9+difference8+difference7+difference6+difference5+difference4+difference3+difference2+difference1
-
+                                ClosestUsers.add(compareQuestion.user)
+                                ClosestValues.add(sum)
                             }
-                            if (sum<smallest){
-                                println("done with this")
-                                smallestUser = compareQuestion.user
-                                smallest =sum
 
-                                val NewIntent =  Intent(this,result::class.java )
-                                NewIntent.putExtra("user", smallestUser)
-                                startActivity(NewIntent)
-                            }
 
                         }
                         //Toast.makeText(this, smallestUser +" "+ smallest.toString()+ " " +y.toString(), Toast.LENGTH_LONG).show()
+
+                        var threeUsers : ArrayList<String> = ArrayList()
+                        //the three Users we are going to send over
+                        var threeValues: ArrayList<Int> = ArrayList()
+                        if(ClosestValues.max()!=null ){
+                            for( i in 0..50){
+                                if(threeUsers.size>2){
+                                    break
+                                }
+                                for (j in 0..ClosestValues.size-1){
+
+                                    if (i == ClosestValues[j] && ClosestUsers[j]!=user  && !threeUsers.contains(ClosestUsers[j])){
+                                        //making sure that the currrent user isnt being sent
+                                        threeUsers.add(ClosestUsers[j])
+                                        threeValues.add(ClosestValues[j])
+                                    }
+                                    if(threeUsers.size>2){
+                                        break
+                                    }
+                                }
+
+                            }
+
+
+                        }
+                        println(ClosestUsers[0] + ClosestUsers[1]+ ClosestUsers[2]+ ClosestUsers[3]+ ClosestUsers[4])
+                        for (j in threeUsers) {
+                            println(j + " " + "hello there")
+                        }
+
+                        val NewIntent =  Intent(this,result::class.java )
+                        NewIntent.putExtra("users", threeUsers)
+                        NewIntent.putExtra("values", threeValues)
+                        startActivity(NewIntent)
 
 
                     } else {
                         println("failed to get data")
                     }
+
                 })
 
                 /////////////////////
